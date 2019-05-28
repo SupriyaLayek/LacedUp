@@ -14,10 +14,8 @@
                 
 
               <div class="col-md-12">
-                    <center><h1>My Cart</h1></center>
                         <div class="section-title">
-
-                           <center> <table  class="table" style="width:80%;margin-top: -59px;">
+                           <center> <table  class="table" style="width:80%">
                         <thead class="thead-dark">
                             <br>
                             <tr>  
@@ -26,7 +24,6 @@
                                 <th  scope="col">Product</th>
                                 <th  scope="col">Quantity</th>
                                 <th  scope="col">Product Name</th>
-                               
                                 <th  scope="col">Total Price</th>
                                 <th  scope="col">Remove</th>
                             </tr>
@@ -50,8 +47,7 @@
                               
                                     </td>
                                 <td style="vertical-align: middle;">{{$product ['item']['product_name']}}</td>
-                                 
-   
+                                    
                                 <td style="vertical-align: middle;">$ {{$product ['price']}}</td>
 
 
@@ -79,7 +75,7 @@
                         <tr>
                             <td><a href="{{url('shop')}}" class=" btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                             <td colspan="2" class="hidden-xs"></td>
-                            <td class="hidden-xs text-center"><strong>Total Price:&nbsp;&nbsp;${{$totalPrice}}</strong></td>
+                            <td class="hidden-xs text-center">Total:<strong>&nbsp;&nbsp;&nbsp;$ {{$totalPrice}}</strong></td>
                             <td><a href="{{url('ship')}}" class="btn btn-primary btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
                         </tr>
                     </tfoot>
@@ -100,6 +96,7 @@
  <a href="{{route('shop')}}" class="btn btn-primary">visit store</a>
 </center>
 @endif
+
 
  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>

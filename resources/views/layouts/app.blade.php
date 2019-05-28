@@ -11,7 +11,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Boots</title>
+    <title>LacedUp</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -64,6 +64,11 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('css/easy-responsive-tabs.css')}}">
+
+
+<link rel="icon" type="image/jpeg" sizes="16x16" href="{{ asset('images/favicon.jpeg') }}">
+
 
 
  

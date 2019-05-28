@@ -21,14 +21,17 @@
 
         <script src="{{asset('js/modernizr.min.js')}}"></script>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+       
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="{{asset('js/jquery.min.js')}}"></script>    
+
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{asset('js/validate.js')}}"></script>
 
-        
+     <link rel="icon" type="image/jpeg" sizes="16x16" href="{{ asset('images/favicon.jpeg') }}">
+   
     </head>
 
 
@@ -132,7 +135,7 @@
         </script>
 
         <!-- Plugins  -->
-        <script src="{{asset('js/jquery.min.js')}}"></script>
+       
         <script src="{{asset('js/popper.min.js')}}"></script><!-- Popper for Bootstrap -->
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
         <script src="{{asset('js/detect.js')}}"></script>
@@ -148,7 +151,6 @@
         <!-- Counter Up  -->
         <script src="{{asset('plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
         <script src="{{asset('plugins/counterup/jquery.counterup.min.js')}}"></script>
-<script src="http://demo.expertphp.in/js/jquery.validate.min.js"></script>
 
         <!-- circliful Chart -->
         <script src="{{asset('plugins/jquery-circliful/js/jquery.circliful.min.js')}}"></script>
@@ -163,7 +165,7 @@
         <!-- Custom main Js -->
         <script src="{{asset('js/jquery.core.js')}}"></script>
         <script src="{{asset('js/jquery.app.js')}}"></script>
-        <script src="{{asset('js/validate.js')}}"></script>
+        
 
 
         <script type="text/javascript">

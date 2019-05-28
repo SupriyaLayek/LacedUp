@@ -74,7 +74,7 @@
                         <td>{{$rows['product_name']}}</td>
                         <td>{{$rows['product_colour']}}</td>
                         <td>{{$rows['description']}}</td>
-                        <td>{{$rows['price']}}</td>
+                        <td>${{$rows['price']}}</td>
                         <td>{{$rows['size']}}</td>
                       
                         

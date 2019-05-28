@@ -23,7 +23,7 @@
 </style>
 <div class="container">
   <div class="row" style="margin-top: 70px;">
-    <div class="col" style="margin-top: -20px;">
+    <div class="col col-md-6" style="margin-top: -20px;">
   </div>
  
 
@@ -38,19 +38,18 @@
                  
           
   <center>
- <div class="col">
-      <div class="btn btn-primary" style=" width: 700px;background-color: #428bca; color: white;">
+ <div class="col col-md-6" style="left:300px;">
+      <div class="col col-xs-6" style=" width: 700px;background-color: #428bca; color: white; border-radius: 3px;">
         <h3>Edit shipping address</h3>
       </div>
-    <form method="post" action="{{url('/updateaddress')}}" name="shipping" id="shipping"  style=" width: 700px;
-            border-color: #428bca; 
+    <form method="post" action="{{url('/updateaddress')}}" name="shipping" id="shipping"  style="border-color: #428bca; 
             border-left: 1px solid #D3D3D3;
             border-right: 1px solid #D3D3D3;
             padding: 20px 20px;
             border-top: 1px solid #D3D3D3;
             border-bottom: 1px solid #D3D3D3;
             box-shadow:  10px 5px 5px lightgrey;
-            border-radius: 3px;
+            border-radius: 5px;
             ">
             
           {{csrf_field()}}

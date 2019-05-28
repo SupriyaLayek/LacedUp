@@ -91,6 +91,7 @@
                 </tr>
                 @endforeach
             </tbody>
+             {!!$category->links()!!}
         </table>
         </div>
     </div>

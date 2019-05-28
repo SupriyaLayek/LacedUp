@@ -56,17 +56,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {    
         //server side validations
-        $validator = Validator::make($request->all(), [
-            'name'=>'required',             //name can't be blank
-           'description'=>'required',       //description can't be blank
-           
-        ]);
+       $this->validate($request,[            
+   'name'  =>  ['required','min:5','max:20'],           
+     'description' => ['required','min:5','max:20']
+      ]);
         $category = new Category();      //creating an object of category
        $category->name= $request->input('name');
        $category->description= $request->input('description');  
   
         $category->save();          //save category in the database
-      return redirect('/category'); //redirects to the category listing page
+      return redirect('/category')->with('Success','Category added'); //redirects to the category listing page
 
     
     }

@@ -14,7 +14,7 @@
 /* Blog page*/
 Route::get('blog', function () {
     return view('Pages.blog');
-});
+});  
 
 /* Contact page*/
 Route::get('contact', function () {
@@ -47,7 +47,7 @@ Route::get('mail', function () {
 });
 
 Route::get('/', 'ViewController@index'); //index page of website
-Route::get('shop','ViewController@shop')->name('shop'); //store page
+Route::get('shop','ViewController@shop')->name('shop'); //store page 
 //Route::get('admin','AdminController@index');
 Route::get('users','AdminController@getUser'); 
 
@@ -77,12 +77,14 @@ Route::post('/checkout','CartController@postcheckout')->name('checkout'); //hand
 
 Route::get('/ship','CartController@getship')->name('ship'); // get shipping details form
 Route::post('/shipping','CartController@store'); //store shipping data 
+Route::post('/reviews/{id}','ViewController@reviews'); //store reviews
 
-});
+
+});   
 
 
 Route::get('/home', 'HomeController@index')->name('home'); //dashboard of user
-Route::get('/verify/{token}', 'verifyController@verify')->name('verify'); //verify user account through mail
+Route::get('/verify/{token}', 'verifyController@emailVerification')->name('verify'); //verify user account through mail
  Route::get('/edit/{id}','editController@edit')->name('edit'); //edit user profile
  Route::post('store','editController@store')->name('store'); //store user profile's data
  Route::post('update','editController@update')->name('update'); //update user profile
@@ -94,11 +96,11 @@ Route::resource('/product','ProductController'); //product create, edit, update,
 Route::get('/changeProduct','ProductController@changeProduct')->name('changeProduct');
 Route::get('/changeCategory','CategoryController@changeCategory')->name('changeCategory');
 Route::get('/categoryList/{id}', 'ViewController@categoryList')->name('categoryList');
-Route::get('orders','AdminController@orders')->name('orders'); //admin orders
+Route::get('orders','AdminController@orders')->name('orders'); //admin orders listing
 
 Route::get('myOrders/{id}','AdminController@getOrder'); //front end order list
 
-Route::get('detailorder/{id}','AdminController@detailOrder');//front end detail order list
+//Route::get('detailorder/{id}','AdminController@detailOrder');//front end detail order list
 
 Route::get('/orderDetails/{id}','AdminController@orderDetails');//admin order details
 
@@ -113,9 +115,3 @@ Route::any('deladdress/{id}','CartController@deleteaddress'); //delete address
 
 
 Route::get('/downloadPDF/{id}','CartController@downloadPDF'); //download pdf
-
-
-
-
-
-

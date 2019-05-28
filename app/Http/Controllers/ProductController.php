@@ -8,6 +8,8 @@ use App\Cart;
 use App\Category;
 use Session;
 use DB;
+use App\Review;
+use Auth;
 
 
 class ProductController extends Controller
@@ -28,7 +30,7 @@ class ProductController extends Controller
             $product = $product->where('product_name','LIKE','%'.$name.'%');
         }
         
-         $product = $product->paginate(5); //pagination
+         $product = $product->paginate(10); //pagination
          
          // $product = Product::where('status', 1)->get();
         
@@ -63,14 +65,17 @@ class ProductController extends Controller
      {
 
 
-          // $this->validate($request,[
-          //  'product_name'=>'required | min:3 | max:9 |string|regex:/^[\pL\s\-]+$/u',
-          //   'product_colour'=>'required | min:3 | max:9 |string|regex:/^[\pL\s\-]+$/u',
-          //    'size'=>'required ',
-          //     'price'=>'required | min:3 | max:9 ',
-          //  'description'=>'required | min:3 | max:200 |string |regex:/^[\pL\s\-]+$/u',
-          
-          //      ]);
+          $this->validate($request,[
+            
+     'product_name'  =>  ['required','min:5','max:20'],           
+     'product_colour' => ['required'],
+     'description' => ['required','min:5','max:255'],
+     'price' => ['required','numeric'],
+     'size' => ['required'],
+      'product_image' => ['required']
+
+
+      ]);
        $product = new Product(); //new object creation
        
        $product ->category_id   =  $request->input('category_id');
@@ -208,4 +213,5 @@ public function changeProduct(Request $request){
            }
         }
 
+        
    }

@@ -1,6 +1,14 @@
 @extends('layouts.adminMain')
 @section('content')
 
+@foreach($errors->all() as $error)
+<div class="row">
+    <div class="alert alert-danger alert-dismissible col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Warning!</strong> {{$error}}
+    </div>
+</div>
+@endforeach
 
 <div class="content-page">
     <!-- Start content -->
@@ -69,7 +77,6 @@
 </div>
 </div>
 </div>
-
 @endsection
 
     

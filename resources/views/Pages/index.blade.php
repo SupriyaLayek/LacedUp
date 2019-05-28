@@ -70,7 +70,7 @@
 
                     <div class="product-shoe-info shoe text-center">
                         <div class="men-thumb-item">
-                          <center><img src="{{asset('images/users/'.$row['image'])}}" class="img-fluid" style="height: 200px;width: 200px;position: relative;" ><br>
+                          <center><img src="{{asset('images/users/'.$row['image'])}}" class="img-fluid" style="height: 220px;width: 250px;position: relative;" ><br>
                             <a href="{{url('/single/'.$row['id'])}}" class="btn btn-primary" 
                              style="position: relative;  background-color: #428bca;  border-color: #357ebd;   top: 26px; color: #fff;">{{$row['product_name']}}</a>  
                         </a>
@@ -112,7 +112,7 @@
        
 
         <span style="position: relative;left: 82px;">
-         {!!$products->links()!!}
+        
      </span>
       
 

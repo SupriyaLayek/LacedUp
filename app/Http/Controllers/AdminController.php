@@ -35,7 +35,7 @@ class AdminController extends Controller
         'group_by_period' => 'day',
         'aggregate_function' => 'sum',
         'aggregate_field' => 'total_Price',
-        'chart_type' => 'pie',
+        'chart_type' => 'line',
     ];
      $chart1 = new LaravelChart($chart_options);
 
@@ -46,7 +46,7 @@ class AdminController extends Controller
     'model' => 'App\Product',
     'group_by_field' => 'created_at',
     'group_by_period' => 'month',
-    'chart_type' => 'line',
+    'chart_type' => 'pie',
     ];
       
          $chart2 = new LaravelChart($chart_options);

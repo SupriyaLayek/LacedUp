@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class verifyController extends Controller
 {
-   public function verify($token){
+   public function verify($token){   
    
     $data = User::where('token', $token)->firstOrFail();
     if(!empty($data)) {

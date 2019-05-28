@@ -91,7 +91,7 @@ class CartController extends Controller
                 $order->save();
 
                 $s = Order::where('id',$order->id)->first();
-              
+            //store cart in order detail table  
             foreach ($cart->items as $thing) {
                  $order_data=new OrderDetail();
                  $order_data->user_id = Auth::User()->id;
@@ -110,7 +110,7 @@ class CartController extends Controller
           
            // dd($pdf);
             //$url = url('resources/views/Pages/mail.blade.php');
-          $pdfpath = public_path().'/invoiceuser/'.$order->id.'.pdf';
+          $pdfpath = public_path().'/invoiceuser/'.$order->id.'.pdf'; //path to save the pdf
             // PDF::(loadHtml($pdf)->save($pdfpath)->render()->stream($order->id.'.pdf'));
   $pdf = PDF::loadView('Pages.mail', compact('cart'))->save($pdfpath)->stream($order->id.'.pdf');
   // return $pdf->stream($pdfpath);
@@ -128,13 +128,7 @@ class CartController extends Controller
     } 
 
 
-     public function downloadPDF($id){
-      $data = Order::find($id);
-
-      $pdf = PDF::loadView('Pages.mail', compact('data'));
-      return $pdf->download('invoice.pdf');
-
-    }
+    
 
     /* Reduce the quantity by one */
     public function reducebyone(Request $request) {

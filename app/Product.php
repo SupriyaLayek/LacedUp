@@ -12,5 +12,8 @@ class Product extends Model
 	protected $table = 'products';
     protected $fillable= ['product_name','product_colour','description','price','image', 'category_id'];
 
-   
+   public function reviews()
+      {
+          return $this->hasMany('App\Review');
+      }
 }

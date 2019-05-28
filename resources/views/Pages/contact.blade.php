@@ -89,7 +89,7 @@
             
             message:{
                 required:true,
-                minlength:2,
+                minlength:20,
                 maxlength:50
             }  
         },

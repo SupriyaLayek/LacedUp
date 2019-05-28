@@ -42,6 +42,8 @@ card.addEventListener('change', function(event) {
 var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
+   $('#trigger').attr("disabled", true);
+   
 
   stripe.createToken(card).then(function(result) {
     if (result.error) {

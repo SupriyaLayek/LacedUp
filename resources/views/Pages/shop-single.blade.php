@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
-
+ 
+ <style type="text/css">
+   .error{
+    color: red;
+   }
+ </style>
     <!-- mian-content -->
 
     <!--//main-content-->
@@ -90,7 +95,57 @@
 </div>
 </div>
 </div>
+<div class="row" style="margin-left: 20px; margin-right: 20px;">
+  <div class="col-sm-6">
+    <div class="card">
+     <button class="btn btn-primary">Product Reviews</button>
+      <div style="margin-left: 20px;margin-right: 20px;">   
+       @foreach($products->reviews as $product)
+       <div class="row-md-4 row-md-4">
 
+       <h4 class="card-title ">{{$product->title}}</h4>
+       <span class="pull-right card-text" style="position: relative;bottom: 27px;">by: {{$product->name}} on:{{$product->created_at->format('d/m/y')}}</span>
+        </div>
+        <p class="card-text" style="width: 80%;">{{$product->description}}</p>
+       
+         <hr>
+           @endforeach
+      </div>
+    </div>
+  </div>
+   
+  
+  <div class="col-sm-6">
+    <div class="card">
+     <button class="btn btn-primary">Add Review</button>
+      <div class="card-body">
+        <form class="form-horizontal" action="{{url('/reviews/'.$products->id)}}" method="post"  id="reviews">
+            {{csrf_field()}}
+               <div class="form-group">
+           
+      <label class="control-label col-sm-2" for="email">Title:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
+      </div>
+    </div>   
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Comment:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="comment" placeholder="Your review" name="description">
+      </div>
+    </div>   
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+      </div>
+    </div>
+  </div>
+</div>
     </section>
     
 
@@ -123,8 +178,49 @@
 </script>
 
 
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+     
+      
+  <script >
+    $(document).ready(function () {
+    $('#reviews').validate({ // initialize the plugin
+        rules: {
+            
+            title: {
+                required:true,
+                maxlength: 10,
+                minlength:5
+
+            },            
+            description:{
+                required:true,
+                minlength:10,
+                maxlength:50
+            },
+            
+
+        },
+        messages:{
+            
+           title:{
+                required:"title is required"
+
+            },            
+            description:{
+                required:"description can't be blank!",
+            }
+        }
 
 
-    <!-- //contact -->
 
-    @endsection
+    });
+
+});
+</script>
+<script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+ @endsection  
+
+

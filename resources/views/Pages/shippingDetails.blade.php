@@ -1,4 +1,4 @@
-@extends('layouts.app')
+ @extends('layouts.app')
 @section('content')
 
 
@@ -22,7 +22,7 @@
 </style>
 <div class="container">
   <div class="row" style="margin-top: 70px;">
-    <div class="col" style="margin-top: -20px;">
+    <div class=" col col-md-6" style="margin-top: -20px;">
         <h3><b>Your cart items:</b></h3>
        <table  class="table table-bordered" style="width:90%; box-shadow: 10px 5px 5px lightgrey;">
          <thead style="background-color: #428bca; color: white;">
@@ -86,12 +86,12 @@
           
       
       
-<div class="col">
-      <div class="btn btn-primary" style=" width: 600px;background-color: #428bca; color: white;">
-        <h3>New shipping address</h3>
+<div class="col col-md-6">
+      <div class="btn btn-primary" style=" width: 552px;background-color: #428bca; color: white;">
+        <center><h4>New shipping address</h4></center>
       </div>
   <form method="post" action="{{url('shipping')}}" name="shipping" id="shipping" 
-            style=" width: 600px;
+          style=" 
             border-color: #428bca; 
             border-left: 1px solid #D3D3D3;
             border-right: 1px solid #D3D3D3;
@@ -99,7 +99,7 @@
             border-top: 1px solid #D3D3D3;
             border-bottom: 1px solid #D3D3D3;
             box-shadow:  10px 5px 5px lightgrey;
-            border-radius: 3px;
+            border-radius: 5px;
             ">
           {{csrf_field()}}
       

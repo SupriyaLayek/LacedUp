@@ -99,7 +99,7 @@
 
                     </div>
                     <div class="cpy-right text-left row">
-                        <p class="col-md-10">© 2019 LacedUp. All rights reserved | Designed with Care.
+                        <p class="col-md-10">© 2019 LacedUp. All rights reserved | Designed by W3layouts.
                            
                         </p>
                         <!-- move top icon -->

@@ -50,9 +50,9 @@
                            @endforeach
                        
                     </div>
-   
+     {!!$products->links()!!}
                 </div>
-              {!!$products->links()!!}  
+              
     </section>
     <br>
     <br>

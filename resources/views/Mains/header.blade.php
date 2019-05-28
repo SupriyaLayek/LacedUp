@@ -25,7 +25,7 @@
 
                         <li><a href="{{url('/')}}">Home</a></li>
                         <li ><a href="{{url('about')}}">About</a></li>
-                        <li><a href="{{url('blog')}}">Blog</a></li>
+                         <li><a href="{{route('shop')}}">Store</a></li>
 
 
                       
@@ -43,7 +43,7 @@
                                 <li><a class="nav-link"  href="{{ url('/categoryList/'.$cat->id)}}" class="dropdown-item"> {{($cat->name)}}</a></li>
                                 </li>
                                 @endforeach
-                                <li><a href="{{route('shop')}}">Store</a></li>
+                               
                             </ul>
                         </li>
                         
@@ -58,14 +58,6 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
 
                         @else
-                              
-
-
-
-
-
-
-
                             <li class="dropdown">
                                 <a href="#"  role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
