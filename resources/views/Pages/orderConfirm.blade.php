@@ -43,6 +43,11 @@ Your order will be delivered to you very soon.</p>
             <span class="badge">{{  $order->id }}</span>
             Order Id
             </li>
+            <li class="list-group-item">
+            <span class="badge">$150</span>
+            Shipping charges
+            </li>
+
 
             </ul>
           

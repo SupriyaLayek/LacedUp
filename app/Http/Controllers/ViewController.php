@@ -11,7 +11,7 @@ use App\Review;
 use Auth;
 
 class ViewController extends Controller
-{ 
+{   
     /* Single page view of the product */
     public function single($id) {
 

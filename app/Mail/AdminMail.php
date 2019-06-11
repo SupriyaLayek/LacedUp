@@ -12,7 +12,7 @@ class AdminMail extends Mailable
 {  
     use Queueable, SerializesModels;
      public $cart;
-     public $pdfpath;
+     public $pdfpath;  
 
     /**
      * Create a new message instance.
